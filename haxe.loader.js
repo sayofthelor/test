@@ -1,24 +1,13 @@
 // a lot of code used from typescript-compile
-import {hscript_Interp, hscript_Parser} from 'https://raw.githubusercontent.com/sayofthelor/test/master/hscript.js';
+import 'https://raw.githubusercontent.com/sayofthelor/test/master/hscript.js';
 (function() {
     if (!window.console) {
         window.console = {
             log: function() {}
         };
     }
-    hashCode = function(s) {
-        var hsh = 0, chr, i;
-        if(s.length == 0) {
-            return hsh;
-        }
-        for(i = 0; i < s.length; i++) {
-            chr = s.charCodeAt(i);
-            hsh = (hsh << 5) - hsh + chr;
-            hsh = hsh & hsh; //Convert to 32bit integer
-        }
-        return hsh;
-    }
-    load = function(url) {
+    
+    const load = function(url) {
         var xhr;
         if(window.XMLHttpRequest) {
             xhr = new XMLHttpRequest();
@@ -37,7 +26,7 @@ import {hscript_Interp, hscript_Parser} from 'https://raw.githubusercontent.com/
         }
         return "";
     }
-    compile = function() {
+    const compile = function() {
         var script = document.getElementsByTagName('script');
         var src= [];
         for (let i = 0; i < script.length; i++) {
@@ -53,11 +42,11 @@ import {hscript_Interp, hscript_Parser} from 'https://raw.githubusercontent.com/
         if(src.length == 0) {
             return;
         }
-        const parser = new hscript_Parser();
+        const parser = new hscript.Parser();
         parser.allowTypes = true;
         parser.allowMetadata = true;
         src.forEach((i) => {
-            const interp = new hscript_Interp();
+            const interp = new hscript.Interp();
             interp.setVar("console", console);
             interp.setVar("document", document);
             interp.setVar("window", window);
