@@ -1,5 +1,5 @@
 // a lot of code used from typescript-compile
-import {hscript_Interp, hscript_Parser} from 'http://dummyurl.com/haxe/hscript.js';
+import {hscript_Interp, hscript_Parser} from 'https://raw.githubusercontent.com/sayofthelor/test/master/hscript.js';
 (function() {
     if (!window.console) {
         window.console = {
