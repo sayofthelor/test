@@ -1,5 +1,5 @@
 // a lot of code used from typescript-compile
-import 'https://raw.githubusercontent.com/sayofthelor/test/master/hscript.js';
+import 'https://cdn.jsdelivr.net/gh/sayofthelor/test/hscript.min.js';
 (function() {
     if (!window.console) {
         window.console = {
